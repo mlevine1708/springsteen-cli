@@ -1,7 +1,7 @@
 class Springsteen::CLI 
   
   def hello
-    puts "Hello world"
+    puts "Hello world!"
   end
   
 end
