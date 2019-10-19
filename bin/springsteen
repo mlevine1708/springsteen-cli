@@ -2,5 +2,5 @@
 
 require_relative "../lib/environment"
 
-Springsteen::CLI.new.hello
+Springsteen::CLI.new.call 
 
