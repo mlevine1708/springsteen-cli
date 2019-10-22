@@ -3,6 +3,7 @@ class Springsteen::CLI
   def call
     which_album
     album
+    sign_off
   end
   
   def which_album
@@ -24,7 +25,14 @@ class Springsteen::CLI
          puts "Born To Run"
       end 
     end
+  end 
+  
+  def sign_off
+    puts "Thank you for visiting!"
   end
+
 end
+
+
 
 
