@@ -1,4 +1,11 @@
+
 class Springsteen::CLI 
+  
+  
+  
+  def initialize
+    Springsteen::Album = self
+  end
   
   def call
     which_album
@@ -12,26 +19,18 @@ class Springsteen::CLI
   end
   
   def album
-    puts "Enter the number of the album you want more details about or type exit to end."
-    input = nil 
-    while input != "exit" 
-      input = gets.strip
-      case input
-      when "1"
-        puts "Greetings From Asbury Park, NJ"
-      when "2"
-        puts "The Wild, The Innocent, and the E Street Shuffle"
-     when "3"
-         puts "Born To Run"
+     @albums = Springsteen::Album
+    @albums.each.with_index(1) do |album, i|
+      puts "#{i}. #{album.title} - #{album.date} - #{album.url}"
+    end
       end 
     end
-  end 
+  
   
   def sign_off
     puts "Thank you for visiting!"
   end
 
-end
 
 
 
