@@ -3,10 +3,6 @@ class Springsteen::CLI
   
   
   
-  def initialize
-    Springsteen::Album 
-  end
-  
   def call
     which_album
     album
@@ -15,7 +11,10 @@ class Springsteen::CLI
   
   def which_album
     puts  "Welcome to the Bruce Springsteen CLI!"
-    puts "Which Bruce Springsteen album do you want to learn about?"
+    @album = Springsteen::Album 
+    @album.each.with_index(1) do |album, i|
+      puts "#{i}. #{album.name}"
+    end
   end
   
   def album
