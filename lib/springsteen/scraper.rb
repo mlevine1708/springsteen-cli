@@ -1,14 +1,12 @@
-class Springsteen::Album
+require "nokogiri"
+require "open-uri"
+
+module Springsteen
+class Scraper 
   
-  attr_accessor :title, :date, :url, :description 
-  
-def initialize
-  @title = title
-  @date = date
-  @url = url 
- 
- #def self.scrape_springsteen
-  # doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
+
+def self.scrape_springsteen
+  doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
    
    #album_1 = self.new
    #album_1.title = doc.search("h2.title").text 
@@ -23,10 +21,13 @@ albums.each do |album|
   url = album.attr("href")
   title = album.css("span.title").text
   date = album.css("span.date").text
-  puts title, date, url, ""
+ Springsteen::Album title, date, url, ""
+    end
+ end 
 end
-   
- end
+end 
+
+  Springsteen::Scraper.scrape_springsteen
   
   #def self.list 
     
@@ -35,11 +36,8 @@ end
     #album_1.date = January 5, 1973
     #album_1.url = https://brucespringsteen.net/albums/greetings-from-asbury-park-n-j-2
     #album_1.description = 
-    
+   
+   
+ 
   
   
-  
-
-
-
-

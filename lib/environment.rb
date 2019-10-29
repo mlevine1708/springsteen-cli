@@ -1,11 +1,17 @@
 
 module Springsteen
     class Error < StandardError; end
-    # Your code goes here...
+
 end
 
 require_relative "./springsteen/cli"
 #require 'pry' 
-module Springsteen::Album
+require-relative "./springsteen/album.rb"
+require-relative "./springsteen/scraper.rb"
+require "nokogiri"
+require "open-uri"
+
+
+
+
   
-end 

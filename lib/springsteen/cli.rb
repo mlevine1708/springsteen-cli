@@ -1,5 +1,5 @@
-
-class Springsteen::CLI 
+module Springsteen
+class CLI 
   
   
   
@@ -29,6 +29,7 @@ class Springsteen::CLI
   def sign_off
     puts "Thank you for visiting!"
   end
+end 
 
 
 
