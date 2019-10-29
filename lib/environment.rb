@@ -6,3 +6,6 @@ end
 
 require_relative "./springsteen/cli"
 #require 'pry' 
+module Springsteen::Album
+  
+end 

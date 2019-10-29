@@ -4,7 +4,7 @@ class Springsteen::CLI
   
   
   def initialize
-    Springsteen::Album = self
+    Springsteen::Album 
   end
   
   def call
