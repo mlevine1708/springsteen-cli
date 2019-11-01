@@ -22,14 +22,16 @@ class CLI
     @albums.each.with_index(1) do |album, i|
       puts "#{i}. #{album.title} - #{album.date} - #{album.url}"
     end
-      end 
-    end
+  end
   
   
   def sign_off
     puts "Thank you for visiting!"
   end
-end 
+
+
+end
+
 
 
 

@@ -1,4 +1,5 @@
-class Springsteen::Album
+module Springsteen
+  class Album
   
   attr_accessor :title, :date, :url, :description 
   
