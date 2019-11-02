@@ -6,9 +6,9 @@ class Scraper
   
 
 def self.scrape_springsteen
-  doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
+doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
    
-   site = "https://brucespringsteen.net/albums"
+site = "https://brucespringsteen.net/albums"
 doc = Nokogiri::HTML(open(site))
 
 albums = doc.css("div.album-minis a.album-mini")
@@ -23,12 +23,7 @@ albums.each do |album|
  end 
 end
 
-#def description_scrape
- # doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
-  # site = "https://brucespringsteen.net/albums"
-#doc = Nokogiri::HTML(open(site))
-#doc.css("div.body description")
-#end
+
 
 end 
 
