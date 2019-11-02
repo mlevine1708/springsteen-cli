@@ -8,6 +8,8 @@ class CLI
   
   def start 
     puts "Welcome to the Bruce Springsteen CLI"
+    scraper.scrape_springsteen
+  end 
     
   
   #def which_album
@@ -33,8 +35,5 @@ class CLI
 
 end
 
-
-
-
-
 end
+

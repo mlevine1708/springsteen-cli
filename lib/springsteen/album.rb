@@ -1,9 +1,9 @@
 module Springsteen
 class Album
   
-  @@all = []
+  @@all = [ ]
   
-  attr_accessor :title, :date, :url, :description 
+  attr_accessor :title, :date, :url 
   
   def Album
     album.self
@@ -27,12 +27,4 @@ end
    
  end
   
-  
-    
-  
-  
-  
-
-
-
 end 

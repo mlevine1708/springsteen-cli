@@ -3,16 +3,16 @@ require "open-uri"
 
 module Springsteen
 class Scraper 
-  
 
 def self.scrape_springsteen
-doc = Nokogiri::HTML(open("https://brucespringsteen.net/albums"))
+  url = "https://brucespringsteen.net/albums"
    
-site = "https://brucespringsteen.net/albums"
-doc = Nokogiri::HTML(open(site))
+doc = Nokogiri::HTML(open(url))
+
 
 albums = doc.css("div.album-minis a.album-mini")
 puts albums.count
+
 
 albums.each do |album|
   url = album.attr("href")
@@ -31,6 +31,3 @@ end
   
    
    
- 
-  
-  
