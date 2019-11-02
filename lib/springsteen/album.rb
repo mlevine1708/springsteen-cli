@@ -9,7 +9,7 @@ class Album
     album.self
   end
   
-def initialize
+def initialize(title, date, url)
   @title = title
   @date = date
   @url = url 
