@@ -18,7 +18,6 @@ albums.each do |album|
   url = album.attr("href")
   title = album.css("span.title").text
   date = album.css("span.date").text
- Springsteen::Album title, date, url, ""
     end
  end 
 end
