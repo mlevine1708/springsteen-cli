@@ -21,6 +21,12 @@ albums.each do |album|
  end 
 end
 
+
+#description = doc.css('.body').text.strip
+#site = "https://brucespringsteen.net/albums/greetings-from-asbury-park-n-j-2"
+#doc = Nokogiri::HTML(open(site))
+#description = doc.css('.body').text.strip
+
 end 
 
 
@@ -30,4 +36,4 @@ end
   
   
    
-   
+  
