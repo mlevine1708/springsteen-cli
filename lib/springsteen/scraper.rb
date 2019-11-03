@@ -26,7 +26,7 @@ end
 
 
 
-  Springsteen::Scraper.scrape_springsteen
+  #Springsteen::Scraper.scrape_springsteen
   
   
    

@@ -5,8 +5,8 @@ class Album
   
   attr_accessor :title, :date, :url 
   
-  def Album
-    album.self
+  def self.new_album
+    self.new 
   end
   
 def initialize(title, date, url)
