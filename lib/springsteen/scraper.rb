@@ -21,18 +21,28 @@ albums.each do |album|
  end 
 end
 
+def self.scrape_sprigsteen2
+  site = "https://brucespringsteen.net/albums"
+ 
+ doc = Nokogiri::HTML(open(site))
+ 
+  deets = doc.css("div.details")
+  title = deets.css(".title").text
+  info = deets.css("p").text
+  notes = doc.css(".notes")
+  release_date = notes.css("tr:first-child td").text
+  label = notes.css("tr:nth-child(2) td").text
+  producer = notes.css("tr:nth-child(3) td").text
+  
+end
 
-#description = doc.css('.body').text.strip
-#site = "https://brucespringsteen.net/albums/greetings-from-asbury-park-n-j-2"
-#doc = Nokogiri::HTML(open(site))
-#description = doc.css('.body').text.strip
 
 end 
 
 
 
 
-  #Springsteen::Scraper.scrape_springsteen
+  Springsteen::Scraper.scrape_springsteen2
   
   
    
