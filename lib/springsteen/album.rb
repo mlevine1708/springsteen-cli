@@ -17,6 +17,7 @@ def initialize(title, date, url)
 end
 
 def self.all 
+  Springsteen::Scraper.scrape_albums if @@all.empty?
   @@all  
 end
 
