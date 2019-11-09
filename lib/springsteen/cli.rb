@@ -1,26 +1,18 @@
 module Springsteen
 class CLI 
   
- def load_albums
-   Springsteen::Album.create_album
- end
- 
  def call
    puts "Welcome to the Bruce Springsteen CLI"
-   input = ""
-   until input == "exit"
-  list_albums
+   @input = ""
+   until @input == "exit"
+  load_albums
   find_descriptions
 end
-  
-    
-    def sign_off
-    puts "Thank you for visiting!"
-  end
-  
-def list_albums
-    @album = Springsteen::Album.all 
-   end
+sign_off
+end
+ 
+ def load_albums
+   @album = Springsteen::Album.all
  end
  
  def find_descriptions
@@ -31,6 +23,9 @@ def list_albums
  end
 end 
     
+    def sign_off
+    puts "Thank you for visiting!"
+  end
   
   #def which_album
    #puts  "Welcome to the Bruce Springsteen CLI!"
@@ -47,14 +42,5 @@ end
     end
   end
   
-  
-  
-
-
-    end
-  #end
-
-
-
-
-
+end
+end

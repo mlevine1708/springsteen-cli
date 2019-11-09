@@ -1,8 +1,8 @@
+class Springsteen::Scraper 
+
 require "nokogiri"
 require "open-uri"
 
-module Springsteen
-class Scraper 
 
 def self.scrape_springsteen
   site = "https://brucespringsteen.net/albums"
@@ -10,20 +10,21 @@ def self.scrape_springsteen
 doc = Nokogiri::HTML(open(site))
 
 
-albums = doc.css("div.album-minis a.album-mini")
-puts albums.count
-albums.each do |album|
+album = doc.css("div.album-minis a.album-mini")
+puts album.count
+album.each do |album|
   url = album.attr("href")
   title = album.css("span.title").text
   date = album.css("span.date").text
   puts title, date, url, ""
     end
  end 
+ 
+ 
 end
 
-def self.scrape_sprigsteen2
-  site = "https://brucespringsteen.net/albums"
- 
+def self.scrape_descriptions(descriptions)
+ site = "https://brucespringsteen.net/albums"
  doc = Nokogiri::HTML(open(site))
  
   deets = doc.css("div.details")
@@ -37,7 +38,7 @@ def self.scrape_sprigsteen2
 end
 
 
-end 
+
 
 
 
@@ -46,4 +47,3 @@ end
   
   
    
-  

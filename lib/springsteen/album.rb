@@ -1,31 +1,31 @@
-module Springsteen
-class Album
+class Springsteen::Album
   
-  @@all = [ ]
   
   attr_accessor :title, :date, :url 
+  @@all = [ ]
   
-  def self.new_album
-    self.new 
-  end
-  
-def initialize(title, date, url)
-  @title = title
-  @date = date
-  @url = url 
-  @@all << self 
+  def initialize(title, date, url)
+    @title = title
+    @date = date
+    @url = url 
+    save 
 end
-
+  
 def self.all 
-  Springsteen::Scraper.scrape_albums if @@all.empty?
+  Springsteen::Scraper.scrape_springsteen if @@all.empty?
   @@all  
 end
 
+def list_albums
+  Springsteen:Scraper.scrape_albums(self)
+end
+
+def save
+  @@all << self
+end
  
  
    
    
    
  end
-  
-end 
