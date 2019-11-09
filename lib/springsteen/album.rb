@@ -2,7 +2,7 @@ class Springsteen::Album
   
   
   attr_accessor :title, :date, :url 
-  @@all = [ ]
+  @@all = []
   
   def initialize(title, date, url)
     @title = title
