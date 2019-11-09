@@ -4,12 +4,12 @@ class CLI
  def call
    puts "Welcome to the Bruce Springsteen CLI"
    @input = ""
-   #until @input == "exit"
+   until @input == "exit"
   load_albums
   find_descriptions
 end
-sign_off
-end
+  sign_off
+
  
  def load_albums
    @album = Springsteen::Album.all
@@ -23,9 +23,10 @@ end
  end
 end 
     
-  def sign_off
-    puts "Thank you for visiting!"
-  end
+end
+  #def sign_off
+  #  puts "Thank you for visiting!"
+ # end
   
   #def which_album
    #puts  "Welcome to the Bruce Springsteen CLI!"
