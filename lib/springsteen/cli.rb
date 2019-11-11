@@ -7,15 +7,15 @@ Would you like to see a list of Bruce Springsteen's albums?"
    input = ""
    input = gets.strip 
    until input == "exit"
-   if input = yes then 
-  self.load_albums
+   if input = "yes" then 
+  load_albums
   find_descriptions
   sign_off
 end
 end 
 
- def self.load_albums
-   album = Springsteen::Album.all
+ def load_albums
+   @album = Springsteen::Album.all
  end
  
  def find_descriptions
