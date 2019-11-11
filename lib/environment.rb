@@ -9,7 +9,7 @@ require_relative './springsteen/album'
 require_relative './springsteen/scraper' 
 require "nokogiri"
 require "open-uri"
-
+require "pry"
 
 
 

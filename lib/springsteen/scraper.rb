@@ -16,7 +16,7 @@ album.each do |album|
   url = album.attr("href")
   title = album.css("span.title").text
   date = album.css("span.date").text
-  puts title, date, url, ""
+  Springsteen::Album.new(title, date, url)
     end
  end 
  

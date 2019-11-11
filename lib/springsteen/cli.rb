@@ -2,29 +2,29 @@ module Springsteen
 class CLI 
   
  def call
-   puts "Welcome to the Bruce Springsteen CLI! 
-Would you like to see a list of Bruce Springsteen's albums?"
+   puts "Welcome to the Bruce Springsteen CLI!\n Would you like to see a list of Bruce Springsteen's albums?"
    input = ""
    input = gets.strip 
-   until input == "exit"
-   if input = "yes" then 
-  load_albums
-  find_descriptions
-  sign_off
-end
-end 
+    until input == "exit"
+      if input == "yes"  
+        load_albums
+        find_descriptions
+        sign_off
+      end
+    end
+  end 
 
- def load_albums
-   @album = Springsteen::Album.all
- end
+  def load_albums
+   @albums = Springsteen::Album.all
+  end
  
  def find_descriptions
    puts "If you want to learn more about an album, enter its number: "
-    album.each.with_index(1) do |album, index| 
-      puts "#{index}. #{album.name}"
+    @albums.each.with_index(1) do |album, index| 
+      puts "#{index}. #{album.title}"
    end
  end
-end 
+
     
 end
   #def sign_off
