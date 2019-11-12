@@ -8,7 +8,7 @@ class CLI
     until input == "exit"
       if input == "yes"  
         load_albums
-        find_descriptions
+        get_album
         sign_off
       end
     end
@@ -16,16 +16,19 @@ class CLI
 
   def load_albums
    @albums = Springsteen::Album.all
-  end
- 
-  def find_descriptions
-   puts "If you want to learn more about an album, enter its number: "
-   input = ""
-   input = gets.strip
-    @albums.each.with_index(1) do |album, index| 
+   @albums.each.with_index(1) do |album, index| 
       puts "#{index}. #{album.title}"
    end
- end
+  end
+ 
+  def get_album
+    chosen_album = gets.strip.to_i
+    show_album_for(chosen_album) if valid_input(chosen_album, @albums)
+  end 
+  
+  def valid_input(input, data)
+    input.to_i <= data.length && input.to_i > 0
+  end 
 
     
 end
