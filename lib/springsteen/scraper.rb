@@ -11,7 +11,6 @@ doc = Nokogiri::HTML(open(site))
 
 
 album = doc.css("div.album-minis a.album-mini")
-puts album.count
 album.each do |album|
   url = album.attr("href")
   title = album.css("span.title").text
