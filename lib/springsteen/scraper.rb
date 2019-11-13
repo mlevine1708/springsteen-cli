@@ -24,7 +24,7 @@ end
 
 def self.scrape_descriptions(album)
  site = "https://brucespringsteen.net/albums"
- doc = Nokogiri::HTML(open(album.url))
+ doc = Nokogiri::HTML(open(@album.url))
   deets = doc.css("div.details")
   title = deets.css(".title").text
   info = deets.css("p").text
@@ -32,7 +32,6 @@ def self.scrape_descriptions(album)
   release_date = notes.css("tr:first-child td").text
   label = notes.css("tr:nth-child(2) td").text
   producer = notes.css("tr:nth-child(3) td").text
-  
 end
 
 

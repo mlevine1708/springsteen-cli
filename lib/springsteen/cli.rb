@@ -6,7 +6,7 @@ class CLI
    input = ""
    input = gets.strip 
     until input == "exit"
-      if input == "yes"  
+      if input == "Yes"  
         load_albums
         get_album
         sign_off
@@ -25,12 +25,12 @@ class CLI
     puts "Which album would you like to learn about?"
     input = gets.strip.to_i
     chosen_album = Springsteen::Album.all[input -1]
-    #binding.pry
-    self.scrape_descriptions(chosen_album) if valid_input(chosen_album, @albums)
+    self.scrape_descriptions(chosen_album) if valid_input(input)
   end 
   
-  def valid_input(input, data)
-    input.to_i <= data.length && input.to_i > 0
+  def valid_input(input)
+    binding.pry 
+    input.to_i <= @albums.length && input.to_i > 0
   end 
     
 end
