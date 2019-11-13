@@ -22,14 +22,16 @@ class CLI
   end
  
   def get_album
-    chosen_album = gets.strip.to_i
-    show_album_for(chosen_album) if valid_input(chosen_album, @albums)
+    puts "Which album would you like to learn about?"
+    input = gets.strip.to_i
+    chosen_album = Springsteen::Album.all[input -1]
+    #binding.pry
+    self.scrape_descriptions(chosen_album) if valid_input(chosen_album, @albums)
   end 
   
   def valid_input(input, data)
     input.to_i <= data.length && input.to_i > 0
   end 
-
     
 end
   
