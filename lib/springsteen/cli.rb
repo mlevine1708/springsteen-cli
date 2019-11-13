@@ -25,11 +25,13 @@ class CLI
     puts "Which album would you like to learn about?"
     input = gets.strip.to_i
     chosen_album = Springsteen::Album.all[input -1]
-    self.scrape_descriptions(chosen_album) if valid_input(input)
+    binding.pry 
+    self.scrape_descriptions(@albums) if valid_input(input)
   end 
   
+  
   def valid_input(input)
-    binding.pry 
+    #binding.pry 
     input.to_i <= @albums.length && input.to_i > 0
   end 
     
