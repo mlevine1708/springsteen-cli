@@ -30,11 +30,14 @@ class CLI
   end
 
   def scrape_descriptions(albums)
-    album = @albums[chosen_album - 1]
+    album = @albums[chosen_album -1]
     album.get_album
     puts "Here are the details for #{album.name}"
-    end
+  end
   
+  def chosen_album
+    self.scrape_descriptions
+  end 
  # end
   
   def valid_input(input)
