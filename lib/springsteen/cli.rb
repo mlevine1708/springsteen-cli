@@ -35,8 +35,8 @@ class CLI
     puts "Here are the details for #{album.name}"
   end
   
-  def chosen_album
-    self.scrape_descriptions
+  def chosen_album(album)
+    puts "Here are the details."
   end 
  # end
   
