@@ -1,9 +1,7 @@
 # Springtseen::Cli
-Hello World
+Bruce Springsteen CLI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/springtseen/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Bruce Springsteen CLI.  In this gem, you will be able to access a list of all of Bruce's albums from his entire career.  You can then select an album, by the number, and get more details about that specific album (description, producer, release date, etc.).  
 
 ## Installation
 
@@ -23,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Select a Bruce Springsteen album to learn more about it.
 
 ## Development
 
