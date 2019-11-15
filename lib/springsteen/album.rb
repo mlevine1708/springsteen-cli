@@ -1,7 +1,7 @@
 class Springsteen::Album
   
   
-  attr_accessor :title, :date, :url 
+  attr_accessor :title, :date, :url, :info,  :notes, :release_date, :label, :producer
   @@all = []
   
   def initialize(title, date, url)

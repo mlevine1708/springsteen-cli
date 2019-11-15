@@ -9,7 +9,7 @@ class CLI
       if input == "Yes"  
         load_albums
         get_album
-        #sign_off
+        sign_off
       end
     end
   end 
@@ -26,19 +26,9 @@ class CLI
     input = gets.strip.to_i
     chosen_album = Springsteen::Album.all[input -1]
     #binding.pry 
-    scrape_descriptions(@album) if valid_input(input)
+    Springsteen::Scraper.scrape_descriptions(chosen_album) if valid_input(input)
+    puts chosen_album.info 
   end
-
-  def scrape_descriptions(albums)
-    album = @albums[chosen_album -1]
-    album.get_album
-    puts "Here are the details for #{album.name}"
-  end
-  
-  def chosen_album(album)
-    puts "Here are the details."
-  end 
- # end
   
   def valid_input(input)
     input.to_i <= @albums.length && input.to_i > 0

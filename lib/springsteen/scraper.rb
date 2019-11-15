@@ -19,21 +19,21 @@ album.each do |album|
     end
  end 
  
- 
-end
 
 def self.scrape_descriptions(album)
  site = "https://brucespringsteen.net/albums"
- doc = Nokogiri::HTML(open(@album.url))
+ doc = Nokogiri::HTML(open(album.url))
   deets = doc.css("div.details")
-  title = deets.css(".title").text
-  info = deets.css("p").text
+  album.title = deets.css(".title").text
+  album.info = deets.css("p").text
   notes = doc.css(".notes")
-  release_date = notes.css("tr:first-child td").text
-  label = notes.css("tr:nth-child(2) td").text
-  producer = notes.css("tr:nth-child(3) td").text
+  album.release_date = notes.css("tr:first-child td").text
+  album.label = notes.css("tr:nth-child(2) td").text
+  album.producer = notes.css("tr:nth-child(3) td").text
+ # binding.pry
 end
 
+end
 
 
   
