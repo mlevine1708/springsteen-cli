@@ -2,7 +2,7 @@ module Springsteen
 class CLI 
   
  def call
-   puts "Welcome to the Bruce Springsteen CLI!\nWould you like to see a list of Bruce Springsteen's albums?"
+   puts "Welcome to the Bruce Springsteen CLI!\nWould you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
    input = ""
    input = gets.strip 
       if input == "Yes"  
@@ -10,12 +10,16 @@ class CLI
         get_album
         sleep 5
         another_one
-        until input == "No"
+        elsif input == "No"
+        puts = ""
         puts "Thank you for visiting!"
         exit 
+      else 
+        puts "I don't understand that answer."
+        call 
       end
     end
-  end 
+ 
 
   def load_albums
    @albums = Springsteen::Album.all
@@ -35,18 +39,18 @@ class CLI
     puts chosen_album.release_date
     puts chosen_album.label 
     puts chosen_album.producer
-  end
+    end
+  end 
   
   def another_one
     puts "Would you like to see another one?"
     input = ""
     input = gets.strip 
     if input == "Yes"
-      get_album 
+      call  
     if input == "No"
         puts "Thank you for visiting!"
         exit 
-      end
     end
   end
   
@@ -57,22 +61,13 @@ class CLI
 end
   
   
-  
-  #def which_album
-   #puts  "Welcome to the Bruce Springsteen CLI!"
-   # @album = Springsteen::Album 
-   # @album.each.with_index(1) do |album, i|
-    # puts "#{i}. #{album.self}"
-    #end
-  #end
-  
   def album
      @albums = Springsteen::Album
     @albums.each.with_index(1) do |album, i|
       puts "#{i}. #{album.title} - #{album.date} - #{album.url}"
     end
   end
-end 
+
 
   
 
