@@ -2,31 +2,32 @@ module Springsteen
 class CLI 
   
  def call
-   puts "Welcome to the Bruce Springsteen CLI!"
+   puts "Welcome to the Bruce Springsteen CLI!" 
    start 
  end
  
    
- def start 
+ def start
    puts "Would you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
    input = ""
    input = gets.strip 
-      if input == "Yes"  
+      if input == "Yes"
         load_albums
         get_album
         sleep 5
-        puts "Would you like to see another one?"
+        puts "Do you want to start over? Enter Yes or No."
     input = ""
     input = gets.strip 
       if input == "Yes"
-        start     
+        start      
       elsif input == "No"
         puts ""
         puts "Thank you for visiting!"
         exit 
       else 
+        puts ""
         puts "I don't understand that answer."
-        call 
+        start 
       end
     end
   end 
