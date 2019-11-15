@@ -2,16 +2,26 @@ module Springsteen
 class CLI 
   
  def call
-   puts "Welcome to the Bruce Springsteen CLI!\nWould you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
+   puts "Welcome to the Bruce Springsteen CLI!"
+   start 
+ end
+ 
+   
+ def start 
+   puts "Would you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
    input = ""
    input = gets.strip 
       if input == "Yes"  
         load_albums
         get_album
         sleep 5
-        another_one
-        elsif input == "No"
-        puts = ""
+        puts "Would you like to see another one?"
+    input = ""
+    input = gets.strip 
+      if input == "Yes"
+        start     
+      elsif input == "No"
+        puts ""
         puts "Thank you for visiting!"
         exit 
       else 
@@ -19,6 +29,7 @@ class CLI
         call 
       end
     end
+  end 
  
 
   def load_albums
@@ -32,8 +43,7 @@ class CLI
     puts "Which album would you like to learn about?"
     input = gets.strip.to_i
     chosen_album = Springsteen::Album.all[input -1]
-    #binding.pry 
-    Springsteen::Scraper.scrape_descriptions(chosen_album) if valid_input(input)
+    Springsteen::Scraper.scrape_descriptions(chosen_album) 
     puts chosen_album.info 
     puts chosen_album.notes 
     puts chosen_album.release_date
@@ -42,23 +52,6 @@ class CLI
     end
   end 
   
-  def another_one
-    puts "Would you like to see another one?"
-    input = ""
-    input = gets.strip 
-    if input == "Yes"
-      call  
-    if input == "No"
-        puts "Thank you for visiting!"
-        exit 
-    end
-  end
-  
-  def valid_input(input)
-    input.to_i <= @albums.length && input.to_i > 0
-  end 
-    
-end
   
   
   def album
@@ -68,6 +61,4 @@ end
     end
   end
 
-
-  
-
+end 
