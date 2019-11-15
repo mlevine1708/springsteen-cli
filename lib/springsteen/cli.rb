@@ -5,12 +5,14 @@ class CLI
    puts "Welcome to the Bruce Springsteen CLI!\nWould you like to see a list of Bruce Springsteen's albums?"
    input = ""
    input = gets.strip 
-    until input == "No"
       if input == "Yes"  
         load_albums
         get_album
         sleep 5
         another_one
+        until input == "No"
+        puts "Thank you for visiting!"
+        exit 
       end
     end
   end 
@@ -40,7 +42,7 @@ class CLI
     input = ""
     input = gets.strip 
     if input == "Yes"
-      call 
+      get_album 
     if input == "No"
         puts "Thank you for visiting!"
         exit 
