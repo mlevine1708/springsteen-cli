@@ -5,11 +5,12 @@ class CLI
    puts "Welcome to the Bruce Springsteen CLI!\nWould you like to see a list of Bruce Springsteen's albums?"
    input = ""
    input = gets.strip 
-    until input == "exit"
+    until input == "No"
       if input == "Yes"  
         load_albums
         get_album
-        sign_off
+        sleep 5
+        another_one
       end
     end
   end 
@@ -28,6 +29,23 @@ class CLI
     #binding.pry 
     Springsteen::Scraper.scrape_descriptions(chosen_album) if valid_input(input)
     puts chosen_album.info 
+    puts chosen_album.notes 
+    puts chosen_album.release_date
+    puts chosen_album.label 
+    puts chosen_album.producer
+  end
+  
+  def another_one
+    puts "Would you like to see another one?"
+    input = ""
+    input = gets.strip 
+    if input == "Yes"
+      call 
+    if input == "No"
+        puts "Thank you for visiting!"
+        exit 
+      end
+    end
   end
   
   def valid_input(input)
@@ -36,9 +54,7 @@ class CLI
     
 end
   
-  def sign_off
-    puts "Thank you for visiting!"
-  end
+  
   
   #def which_album
    #puts  "Welcome to the Bruce Springsteen CLI!"
