@@ -11,7 +11,7 @@ class CLI
    puts "Would you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
    input = ""
    input = gets.strip 
-      if input == "Yes"
+      if input == "Yes" || input == "yes" || input == "y"
         load_albums
         get_album
         sleep 5
@@ -56,7 +56,6 @@ class CLI
   
   
   def album
-     @albums = Springsteen::Album
     @albums.each.with_index(1) do |album, i|
       puts "#{i}. #{album.title} - #{album.date} - #{album.url}"
     end
