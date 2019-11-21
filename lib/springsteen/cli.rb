@@ -11,16 +11,16 @@ class CLI
    puts "Would you like to see a list of Bruce Springsteen's albums? Enter Yes or No."
    input = ""
    input = gets.strip 
-      if input == "Yes" || input == "yes" || input == "y"
+      if input == "Yes" || input == "yes" || input == "y" || input == "Y"
         load_albums
         get_album
         sleep 5
         puts "Do you want to start over? Enter Yes or No."
     input = ""
     input = gets.strip 
-      if input == "Yes"
+      if input == "Yes" || input == "yes" || input == "y" || input == "Y"
         start      
-      elsif input == "No"
+      elsif input == "No"  || input == "no" || input == "n" || input == "N"
         puts ""
         puts "Thank you for visiting!"
         exit 
