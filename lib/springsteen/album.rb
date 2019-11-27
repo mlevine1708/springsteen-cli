@@ -9,20 +9,17 @@ class Springsteen::Album
     @date = date
     @url = url 
     save 
-end
+  end
   
-def self.all 
-  Springsteen::Scraper.scrape_springsteen if @@all.empty?
-  @@all  
-end
+  def self.all 
+    Springsteen::Scraper.scrape_springsteen if @@all.empty?
+    @@all  
+  end
 
-def list_albums
-  Springsteen:Scraper.scrape_albums(self)
-end
 
-def save
-  @@all << self
-end
+  def save
+    @@all << self
+  end
  
  
    
